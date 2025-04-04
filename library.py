@@ -97,18 +97,7 @@ def get_avaible_books():
 get_avaible_books()
 
 def get_reader_books(reader_id):
-    libraryDB = sqlite3.connect("library.db")
-    cursor = libraryDB.cursor()
-
-    read_id = cursor.execute("SELECT book_id from readers WHERE reader_id=?", (id,))
-    for book_id in read_id:
-        book_id = list(book_id)
-        search_book = cursor.execute("SELECT title, author, year from books WHERE book_id=?", ("".join(str(id[0])),))
-        for book in search_book:
-            print("Книги ридера: ", book)
-    libraryDB.close()
-
-get_reader_books(510)
+    pass
 
 def search_books(keyword):
     libraryDB = sqlite3.connect("library.db")
